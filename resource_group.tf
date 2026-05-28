@@ -1,6 +1,6 @@
 
-resource "azurerm_resource_group" "cacthis" {
-  name     = "hcp-az-cac-workspace-auth-sp"
+resource "azurerm_resource_group" "cac" {
+  name     = "hcp-az-cac-github-workflow-dev"
   location = "canadacentral"
 
   tags = {
@@ -8,8 +8,8 @@ resource "azurerm_resource_group" "cacthis" {
   }
 }
 
-resource "azurerm_resource_group" "caethis" {
-  name     = "hcp-az-cae-workspace-auth-sp"
+resource "azurerm_resource_group" "cae" {
+  name     = "hcp-az-cae-github-workflow-dev"
   location = "canadaeast"
 
   tags = {

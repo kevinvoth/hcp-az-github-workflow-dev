@@ -12,7 +12,7 @@ terraform {
     organization = "vothdev"
 
     workspaces {
-      name = "hcp-az-workspace-auth-sp"
+      name = "hcp-az-github-workflow-dev"
     }
   }
 }
