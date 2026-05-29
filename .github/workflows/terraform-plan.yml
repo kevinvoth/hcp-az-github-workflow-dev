@@ -2,7 +2,8 @@ name: "Terraform Plan"
 
 on:
   pull_request:
-
+    types:
+      - opened
 env:
   TF_CLOUD_ORGANIZATION: "vothdev"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
@@ -10,14 +11,8 @@ env:
   CONFIG_DIRECTORY: "./"
 
 jobs:
-  terraform:
-    name: "Terraform Plan"
-    runs-on: ubuntu-latest
-    permissions:
-      # so GitHub can check out this repo using the default github.token
-      contents: read
-      pull-requests: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
+    run_if:
+      if: startsWith(github.head_ref, 'feat/')
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "The head of this PR starts with 'feat/'"
