@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get commit message (Pull Request)
-        if: github.event_name == 'pull_request'
         run: |
           echo "Commit Title: ${{ github.event.pull_request.title }}"
           echo "Commit Body: ${{ github.event.pull_request.body }}"
